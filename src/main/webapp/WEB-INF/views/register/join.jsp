@@ -11,7 +11,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	<c:import url="../template/header.jsp"></c:import>
 	<div class="container">	
 		<div class="row justify-content-center">
 			<div class="col-4"><p class="text-center">Member Join Page</p></div>	
