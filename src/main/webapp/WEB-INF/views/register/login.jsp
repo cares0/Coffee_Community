@@ -11,6 +11,8 @@
 	
 </head>
 <body>
+	<c:import url="../template/header.jsp"></c:import>
+	<br>
 	<div class="container">	
 		<div class="row justify-content-center">
 			<div class="col"><h1 class="text-center">Member Login Page</h1></div>

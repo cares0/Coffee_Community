@@ -9,6 +9,8 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<c:import url="../template/header.jsp"></c:import>
+	<br>
 	<div class="container">
 		<h1 class="text-center">My Page</h1>
 		<ul class="list-group">
