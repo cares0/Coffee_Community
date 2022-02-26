@@ -14,8 +14,9 @@ public class RegisterController {
 	
 	@RequestMapping(value = "join", method=RequestMethod.GET)
 	public void join() throws Exception {
-		
 	}
+	
+	
 	
 	
 }
