@@ -5,21 +5,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
+	<c:import url="./template/css_import.jsp"></c:import>
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>index Page</h1>
+	<c:import url="./template/header.jsp"></c:import>
 	
-	<c:choose>
-		<c:when test="${empty member}">
-			<a href="./register/join">Join</a>
-			<a href="./register/login">Login</a>
-		</c:when>
-		<c:otherwise>
-			<a href="./register/mypage">MyPage</a>
-			<a href="./register/logout">Logout</a>
-			<h1>${member.nickname}님 환영합니다.</h1>
-		</c:otherwise>
-	</c:choose>
+	<h1 class="text-center">index Page</h1>
+	<c:if test="${not empty member}"><h1 class="text-center">${member.nickname}님 환영합니다.</h1></c:if>
+			
 </body>
 </html>
