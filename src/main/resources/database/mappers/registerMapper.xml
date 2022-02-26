@@ -9,6 +9,10 @@
 		INSERT INTO REGISTER
 		VALUES (#{id}, #{pw}, #{name}, #{nickname}, #{gender}, #{phone}, #{email}, #{adress}, 1)
 	</insert>
+	
+	<select id="login" parameterType="RegisterDTO" resultType="RegisterDTO">
+		SELECT ID, NICKNAME FROM REGISTER WHERE ID = #{id} AND PW = #{pw}
+	</select>
 
 
 </mapper>

@@ -15,4 +15,8 @@ public class RegisterDAO {
 	public int join(RegisterDTO registerDTO) throws Exception {
 		return sqlSession.update(NAMESPACE+"join", registerDTO);
 	}
+	
+	public RegisterDTO login(RegisterDTO registerDTO) throws Exception {
+		return sqlSession.selectOne(NAMESPACE+"login", registerDTO);
+	}
 }

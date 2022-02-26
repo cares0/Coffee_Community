@@ -12,4 +12,8 @@ public class RegisterService {
 	public int join(RegisterDTO registerDTO) throws Exception {
 		return registerDAO.join(registerDTO);
 	}
+	
+	public RegisterDTO login(RegisterDTO registerDTO) throws Exception {
+		return registerDAO.login(registerDTO);
+	}
 }
