@@ -5,7 +5,7 @@ public class RegisterDTO {
 	private String pw;
 	private String name;
 	private String nickname;
-	private Integer number;
+	private Integer gender;
 	private String phone;
 	private String email;
 	private String adress;
@@ -34,12 +34,12 @@ public class RegisterDTO {
 	}
 	public void setNickname(String nickname) {
 		this.nickname = nickname;
+	}	
+	public Integer getGender() {
+		return gender;
 	}
-	public Integer getNumber() {
-		return number;
-	}
-	public void setNumber(Integer number) {
-		this.number = number;
+	public void setGender(Integer gender) {
+		this.gender = gender;
 	}
 	public String getPhone() {
 		return phone;

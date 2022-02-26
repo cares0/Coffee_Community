@@ -8,4 +8,8 @@ public class RegisterService {
 
 	@Autowired
 	private RegisterDAO registerDAO;
+	
+	public int join(RegisterDTO registerDTO) throws Exception {
+		return registerDAO.join(registerDTO);
+	}
 }

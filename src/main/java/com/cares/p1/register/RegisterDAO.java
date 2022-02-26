@@ -12,4 +12,7 @@ public class RegisterDAO {
 	
 	private final String NAMESPACE = "com.cares.p1.register.RegisterDAO.";
 
+	public int join(RegisterDTO registerDTO) throws Exception {
+		return sqlSession.update(NAMESPACE+"join", registerDTO);
+	}
 }
