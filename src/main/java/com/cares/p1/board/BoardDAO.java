@@ -21,4 +21,8 @@ public class BoardDAO {
 	public BoardDTO detail(BoardDTO boardDTO) throws Exception {
 		return sqlSession.selectOne(NAMESPACE+"detail", boardDTO);
 	}
+	
+	public int add(BoardDTO boardDTO) throws Exception {
+		return sqlSession.update(NAMESPACE+"add", boardDTO);
+	}
 }
