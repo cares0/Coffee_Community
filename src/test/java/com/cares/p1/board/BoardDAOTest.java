@@ -2,6 +2,8 @@ package com.cares.p1.board;
 
 import static org.junit.Assert.*;
 
+import java.util.List;
+
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -19,11 +21,19 @@ public class BoardDAOTest extends InitTestCase {
 	private BoardController boardController;
 	
 	
-	@Test
+	//@Test
 	public void check() {
 		assertNotNull(boardDAO);
 		assertNotNull(boardService);
 		assertNotNull(boardController);
+	}
+	
+	@Test
+	public void listTest() throws Exception {
+		List<BoardDTO> ar = boardService.list();
+		
+		assertNotNull(ar);
+		assertEquals(3, ar.size());
 	}
 
 }
