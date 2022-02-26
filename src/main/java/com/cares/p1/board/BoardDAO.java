@@ -17,4 +17,8 @@ public class BoardDAO {
 	public List<BoardDTO> list() throws Exception {
 		return sqlSession.selectList(NAMESPACE+"list");
 	}
+	
+	public BoardDTO detail(BoardDTO boardDTO) throws Exception {
+		return sqlSession.selectOne(NAMESPACE+"detail", boardDTO);
+	}
 }

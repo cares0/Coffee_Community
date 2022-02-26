@@ -20,4 +20,13 @@ public class BoardController {
 		List<BoardDTO> ar = boardService.list();		
 		model.addAttribute("list", ar);
 	}
+	
+	@RequestMapping(value = "detail", method = RequestMethod.GET)
+	public void detail(BoardDTO boardDTO, Model model) throws Exception {
+		boardDTO = boardService.detail(boardDTO);
+		
+		model.addAttribute("dto", boardDTO);
+	}
+	
+	
 }

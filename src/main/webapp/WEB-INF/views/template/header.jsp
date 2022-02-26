@@ -6,7 +6,7 @@
 		<div class="main_header row align-items-center justify-content-between">
 			<div class="col">
 				<a class="header_nav" href="/p1/">공지사항</a>
-		 		<a class="header_nav" href="/p1/">자유게시판</a>
+		 		<a class="header_nav" href="/p1/board/list">자유게시판</a>
 				<a class="header_nav" href="/p1/">질문게시판</a>
 				<a class="header_nav" href="/p1/">센서리게시판</a>
 			</div>

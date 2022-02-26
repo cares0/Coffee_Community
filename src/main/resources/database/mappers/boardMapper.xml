@@ -8,5 +8,9 @@
 	<select id="list" resultType="BoardDTO">
 		SELECT * FROM BOARD
 	</select>
+	
+	<select id="detail" parameterType="BoardDTO" resultType="BoardDTO">
+		SELECT * FROM BOARD WHERE NUM = #{num}
+	</select>
 
 </mapper>

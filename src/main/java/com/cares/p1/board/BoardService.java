@@ -14,4 +14,8 @@ public class BoardService {
 	public List<BoardDTO> list() throws Exception {
 		return boardDAO.list();
 	}
+	
+	public BoardDTO detail(BoardDTO boardDTO) throws Exception {
+		return boardDAO.detail(boardDTO);
+	}
 }
