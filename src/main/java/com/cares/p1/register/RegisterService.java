@@ -16,4 +16,8 @@ public class RegisterService {
 	public RegisterDTO login(RegisterDTO registerDTO) throws Exception {
 		return registerDAO.login(registerDTO);
 	}
+	
+	public RegisterDTO mypage(RegisterDTO registerDTO) throws Exception {
+		return registerDAO.mypage(registerDTO);
+	}
 }

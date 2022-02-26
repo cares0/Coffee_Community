@@ -19,4 +19,8 @@ public class RegisterDAO {
 	public RegisterDTO login(RegisterDTO registerDTO) throws Exception {
 		return sqlSession.selectOne(NAMESPACE+"login", registerDTO);
 	}
+	
+	public RegisterDTO mypage(RegisterDTO registerDTO) throws Exception {
+		return sqlSession.selectOne(NAMESPACE+"mypage", registerDTO);
+	}
 }

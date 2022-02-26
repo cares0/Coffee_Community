@@ -52,4 +52,12 @@ public class RegisterController {
 		return path;
 	}
 	
+	@RequestMapping(value = "mypage", method = RequestMethod.GET)
+	public void mypage(HttpSession session, Model model) throws Exception {
+		
+		RegisterDTO registerDTO = (RegisterDTO) session.getAttribute("member");
+		registerDTO = registerService.mypage(registerDTO);
+		model.addAttribute("dto", registerDTO);
+	}
+	
 }

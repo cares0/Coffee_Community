@@ -14,5 +14,8 @@
 		SELECT ID, NICKNAME FROM REGISTER WHERE ID = #{id} AND PW = #{pw}
 	</select>
 
+	<select id="mypage" parameterType="RegisterDTO" resultType="RegisterDTO">
+		SELECT ID, NAME, NICKNAME, GENDER, PHONE, EMAIL, ADRESS FROM REGISTER WHERE ID = #{id}
+	</select>
 
 </mapper>
