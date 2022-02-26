@@ -6,6 +6,7 @@
 <configuration>
 	<typeAliases>
 		<typeAlias type="com.cares.p1.register.RegisterDTO" alias="RegisterDTO"/>
+		<typeAlias type="com.cares.p1.board.BoardDTO" alias="BoardDTO"/>
 	
 	</typeAliases>
 </configuration>
