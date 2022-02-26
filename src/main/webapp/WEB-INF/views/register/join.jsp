@@ -7,7 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>index Page</h1>
-	<a href="./register/join">Join</a>
+	<h1> Member Join Page </h1>
 </body>
 </html>

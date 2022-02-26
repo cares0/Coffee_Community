@@ -1,0 +1,15 @@
+package com.cares.p1.register;
+
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class RegisterDAO {
+
+	@Autowired
+	private SqlSession sqlSession;
+	
+	private final String NAMESPACE = "com.cares.p1.register.RegisterDAO.";
+
+}
