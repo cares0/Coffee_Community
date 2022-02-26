@@ -13,7 +13,7 @@
 <body>
 	<div class="container">	
 		<div class="row justify-content-center">
-			<div class="col-4"><p class="text-center">Member Login Page</p></div>	
+			<div class="col"><h1 class="text-center">Member Login Page</h1></div>
 		</div>
 	
 		<form action="./login" method="post">

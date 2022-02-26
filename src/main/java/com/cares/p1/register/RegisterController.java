@@ -60,4 +60,10 @@ public class RegisterController {
 		model.addAttribute("dto", registerDTO);
 	}
 	
+	@RequestMapping(value = "logout", method = RequestMethod.GET)
+	public String logout(HttpSession session) throws Exception {
+		session.invalidate();
+		return "redirect:../";
+	}
+	
 }
