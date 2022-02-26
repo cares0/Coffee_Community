@@ -32,6 +32,10 @@
 		    </c:forEach>
 		  </tbody>
 		</table>
+		<br>
+		<c:if test="${not empty member}">
+		<a class="btn btn-dark" href="./add">글 등록하기</a>
+		</c:if>
 	</div>
 </body>
 </html>

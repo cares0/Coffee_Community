@@ -13,4 +13,8 @@
 		SELECT * FROM BOARD WHERE NUM = #{num}
 	</select>
 
+	<insert id="add" parameterType="BoardDTO">
+		INSERT INTO BOARD VALUES (BOARD_SEQ.NEXTVAL, #{title}, #{contents}, SYSDATE, #{writer}, 0, 2)
+	</insert>
+
 </mapper>

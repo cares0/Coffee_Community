@@ -2,6 +2,8 @@ package com.cares.p1.board;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,6 +28,18 @@ public class BoardController {
 		boardDTO = boardService.detail(boardDTO);
 		
 		model.addAttribute("dto", boardDTO);
+	}
+	
+	@RequestMapping(value = "add", method = RequestMethod.GET)
+	public void add() throws Exception {
+		
+	}
+	
+	@RequestMapping(value = "add", method = RequestMethod.POST)
+	public String add(BoardDTO boardDTO, HttpSession session) throws Exception {
+		int result = boardService.add(boardDTO, session);
+		
+		return "redirect:./list";
 	}
 	
 	
