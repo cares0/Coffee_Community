@@ -25,4 +25,8 @@ public class BoardDAO {
 	public int add(BoardDTO boardDTO) throws Exception {
 		return sqlSession.update(NAMESPACE+"add", boardDTO);
 	}
+	
+	public int delete(BoardDTO boardDTO) throws Exception {
+		return sqlSession.delete(NAMESPACE+"delete", boardDTO);
+	}
 }
