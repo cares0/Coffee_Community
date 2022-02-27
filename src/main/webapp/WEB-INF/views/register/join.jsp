@@ -12,9 +12,10 @@
 </head>
 <body>
 	<c:import url="../template/header.jsp"></c:import>
+	<br>
 	<div class="container">	
-		<div class="row justify-content-center">
-			<div class="col-4"><p class="text-center">Member Join Page</p></div>	
+		<div class="d-flex justify-content-center">
+			<h1>Member Join Page</h1>	
 		</div>
 		<br>
 		<form action="./join" method="post">
@@ -64,6 +65,7 @@
 				  <input type="text" class="form-control" id="adress" name="adress" placeholder="도로명 주소로 기입하세요">
 				</div>
 			</div>	
+			<br>
 			<div class="d-flex justify-content-center">
  				 <button class="btn btn-dark">회원가입하기</button>
 			</div>					
