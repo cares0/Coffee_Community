@@ -10,7 +10,7 @@
 		FROM (SELECT ROWNUM R, B.* 
 		      FROM (SELECT * FROM BOARD 
 		      		WHERE NUM > 0 
-		      		AND CATEGORY = #{sort}
+		      		AND CATEGORY = #{category}
 		      		AND 
 		      		<choose>
 		      			<when test="kind=='col1'">
@@ -30,7 +30,7 @@
 	<select id="getTotal" parameterType="Pager" resultType="Long">
 		SELECT COUNT(NUM) FROM BOARD 
 		WHERE NUM > 0 
-		AND CATEGORY = #{sort}
+		AND CATEGORY = #{category}
 		AND 
 		<choose>
 			<when test="kind=='col1'">
@@ -51,7 +51,7 @@
 	</select>
 
 	<insert id="add" parameterType="BoardDTO">
-		INSERT INTO BOARD VALUES (BOARD_SEQ.NEXTVAL, #{title}, #{contents}, SYSDATE, #{writer}, 0, 2)
+		INSERT INTO BOARD VALUES (BOARD_SEQ.NEXTVAL, #{title}, #{contents}, SYSDATE, #{writer}, 0, #{category})
 	</insert>
 	
 	<delete id="delete" parameterType="BoardDTO">

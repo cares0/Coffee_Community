@@ -35,15 +35,15 @@ public class BoardController {
 	}
 	
 	@RequestMapping(value = "add", method = RequestMethod.GET)
-	public void add() throws Exception {
-		
+	public void add(Integer category, Model model) throws Exception {
+		model.addAttribute("category", category);
 	}
 	
 	@RequestMapping(value = "add", method = RequestMethod.POST)
 	public String add(BoardDTO boardDTO, HttpSession session) throws Exception {
 		int result = boardService.add(boardDTO, session);
 		
-		return "redirect:./list";
+		return "redirect:./list?category="+boardDTO.getCategory();
 	}
 	
 	@RequestMapping(value = "delete", method = RequestMethod.GET)
@@ -51,11 +51,11 @@ public class BoardController {
 		
 		RegisterDTO registerDTO = (RegisterDTO) session.getAttribute("member");
 		if (registerDTO == null || !registerDTO.getNickname().equals(boardDTO.getWriter())) {			
-			return "redirect:./list";
+			return "redirect:./list?category="+boardDTO.getCategory();
 		}
-				
+
 		int result = boardService.delete(boardDTO);
-		return "redirect:./list";
+		return "redirect:./list?category="+boardDTO.getCategory();
 	}
 	
 	@RequestMapping(value = "update", method = RequestMethod.GET)

@@ -56,10 +56,10 @@
 		</ul>
 		<br>
 		<div class="d-flex justify-content-between">		
-		<div><a class="btn btn-secondary text-center" href="./list?sort=${dto.category}">글 목록보기</a></div>				
+		<div><a class="btn btn-secondary text-center" href="./list?category=${dto.category}">글 목록보기</a></div>				
 			<c:if test="${dto.writer==member.nickname}">
 				<div><a class="btn btn-secondary text-center" href="./update?num=${dto.num}&writer=${dto.writer}">글 수정하기</a></div>
-				<div><a class="btn btn-secondary text-center" href="./delete?num=${dto.num}&writer=${dto.writer}">글 삭제하기</a></div>
+				<div><a class="btn btn-secondary text-center" href="./delete?num=${dto.num}&writer=${dto.writer}&category=${dto.category}">글 삭제하기</a></div>
 			</c:if>
 		</div>
 	</div>

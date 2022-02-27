@@ -10,13 +10,27 @@
 </head>
 <body>
 	<c:import url="../template/header.jsp"></c:import>
-
+	<br>
 	<div class="container">
 		<div class="text-center">
-			<h1>Board Add Page</h1>
+			<c:choose>
+				<c:when test="${category==1}">
+					<h1>Notice Add Page</h1>				
+				</c:when>
+				<c:when test="${category==2}">
+					<h1>Free Board Add Page</h1>				
+				</c:when>
+				<c:when test="${category==3}">
+					<h1>QnA Add Page</h1>				
+				</c:when>
+				<c:otherwise>
+					<h1>Sensory Add Page</h1>
+				</c:otherwise>
+			</c:choose>
 		</div>
 		<br>
 		<form action="./add" method="post">
+			<input type="hidden" name="category" value="${category}">
 			<div class="form-floating mb-3">
 			  <input type="text" class="form-control" id="title" name="title" placeholder="title">
 			  <label for="title">title</label>

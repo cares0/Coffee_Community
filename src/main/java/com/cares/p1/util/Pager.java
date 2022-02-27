@@ -84,16 +84,16 @@ public class Pager {
 		return search;
 	}
 	
-	private Integer sort;
+	private Integer category;
 	
-	public Integer getSort() {
-		if(this.sort == null) {
-			this.sort = 2;
+	public Integer getCategory() {
+		if(this.category == null) {
+			this.category = 2;
 		}
-		return sort;
+		return category;
 	}
-	public void setSort(Integer sort) {
-		this.sort = sort;
+	public void setCategory(Integer category) {
+		this.category = category;
 	}
 	public void setKind(String kind) {
 		this.kind = kind;
