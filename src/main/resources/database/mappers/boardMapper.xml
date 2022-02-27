@@ -10,21 +10,7 @@
 		FROM (SELECT ROWNUM R, B.* 
 		      FROM (SELECT * FROM BOARD 
 		      		WHERE NUM > 0 
-		      		AND CATEGORY = 
-		      		<choose>
-		      			<when test="sort==1">
-		      				1
-		      			</when>
-		      			<when test="sort==2">
-		      				2
-		      			</when>
-		      			<when test="sort==3">
-		      				3
-		      			</when>
-		      			<otherwise>
-		      				4
-		      			</otherwise>
-		      		</choose>
+		      		AND CATEGORY = #{sort}
 		      		AND 
 		      		<choose>
 		      			<when test="kind=='col1'">
@@ -44,6 +30,7 @@
 	<select id="getTotal" parameterType="Pager" resultType="Long">
 		SELECT COUNT(NUM) FROM BOARD 
 		WHERE NUM > 0 
+		AND CATEGORY = #{sort}
 		AND 
 		<choose>
 			<when test="kind=='col1'">

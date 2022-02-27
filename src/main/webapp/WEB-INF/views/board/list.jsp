@@ -11,7 +11,8 @@
 <body>
 	<c:import url="../template/header.jsp"></c:import>
 	<br>
-	<div class="container text-center">	
+	<div class="container text-center">
+		
 		<c:choose>
 			<c:when test="${pager.sort==1}">
 				<h1>Notice List Page</h1>
@@ -26,6 +27,7 @@
 				<h1>Sensory List Page</h1>
 			</c:otherwise>
 		</c:choose>
+		
 		<br>
 		<form action="./list" method="get">
 		<div class="input-group">
