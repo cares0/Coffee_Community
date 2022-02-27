@@ -20,8 +20,8 @@ public class BoardDAO {
 		return sqlSession.selectList(NAMESPACE+"list", pager);
 	}
 	
-	public Long getTotal() throws Exception {
-		return sqlSession.selectOne(NAMESPACE+"getTotal");
+	public Long getTotal(Pager pager) throws Exception {
+		return sqlSession.selectOne(NAMESPACE+"getTotal", pager);
 	}
 	
 	public BoardDTO detail(BoardDTO boardDTO) throws Exception {

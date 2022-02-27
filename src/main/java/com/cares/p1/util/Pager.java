@@ -68,8 +68,39 @@ public class Pager {
 		}
 	}
 	
+	private String kind;
+	private String search;
 	
+	public String getKind() {
+		if(this.kind == null) {
+			this.kind = "col1";
+		}
+		return kind;
+	}
+	public String getSearch() {
+		if(this.search == null) {
+			this.search = "";
+		}
+		return search;
+	}
 	
+	private Integer sort;
+	
+	public Integer getSort() {
+		if(this.sort == null) {
+			this.sort = 2;
+		}
+		return sort;
+	}
+	public void setSort(Integer sort) {
+		this.sort = sort;
+	}
+	public void setKind(String kind) {
+		this.kind = kind;
+	}
+	public void setSearch(String search) {
+		this.search = search;
+	}
 	public void setPage(Long page) {
 		this.page = page;
 	}

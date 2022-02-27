@@ -17,7 +17,7 @@
 		<div class="row justify-content-center">
 			<div class="col"><h1 class="text-center">Member Login Page</h1></div>
 		</div>
-	
+		<br>
 		<form action="./login" method="post">
 			<div class="row">
 				  <div class="mb-3">
@@ -29,12 +29,13 @@
 				    <input type="password" class="form-control" id="pw" name="pw" placeholder="password">
 				  </div>
 			</div>
-			<div class="row">
-				  <div class="col-lg-6 col-sm-12 text-lg-start form-check">
+			<br>
+			<div class="d-flex justify-content-between">
+				  <div class="text-lg-start form-check">
 				    <input type="checkbox" class="form-check-input" id="remember" name="remember" value="1">
 				    <label class="form-check-label" for="remember">Remember Me</label>
 				  </div>
-				  <div class="col-lg-6 col-sm-12 text-lg-end text-center">
+				  <div class="text-lg-end text-center">
 				  <button type="submit" class="btn btn-dark">로그인</button>
 				  </div>
 			</div>

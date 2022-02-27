@@ -10,8 +10,37 @@
 </head>
 <body>
 	<c:import url="../template/header.jsp"></c:import>
-	<div class="container text-center">
-		<h1>Board List Page</h1>
+	<br>
+	<div class="container text-center">	
+		<c:choose>
+			<c:when test="${pager.sort==1}">
+				<h1>Notice List Page</h1>
+			</c:when>
+			<c:when test="${pager.sort==2}">
+				<h1>Free Board List Page</h1>
+			</c:when>
+			<c:when test="${pager.sort==3}">
+				<h1>QnA List Page</h1>
+			</c:when>
+			<c:otherwise>
+				<h1>Sensory List Page</h1>
+			</c:otherwise>
+		</c:choose>
+		<br>
+		<form action="./list" method="get">
+		<div class="input-group">
+		  <input type="hidden" name="sort" value="${pager.sort}">
+		  <select class="form-select" name="kind">
+		    <option selected value="col1">무슨 기준으로 검색하시겠습니까?</option>
+		    <option value="col1">제목</option>
+		    <option value="col2">내용</option>
+		    <option value="col3">작성자</option>
+		  </select>
+		  <input type="text" class="form-control" name="search" value="${pager.search}" placeholder="검색어를 입력하세요" >
+		  <button class="btn btn-outline-secondary" type="submit">Search</button>
+		</div>
+		</form>
+		<br>
 		<table class="table table-striped">
 		  <thead>
 		    <tr>
@@ -38,19 +67,19 @@
 				
 				<c:if test="${pager.pre}">
 			    <li class="page-item">
-			      <a class="page-link" href="./list?page=${pager.startNum-1}" aria-label="Previous">
+			      <a class="page-link" href="./list?page=${pager.startNum-1}&search=${pager.search}&kind=${pager.kind}&sort=${pager.sort}" aria-label="Previous">
 			        <span aria-hidden="true">&laquo;</span>
 			      </a>
 			    </li>
 			    </c:if>
 			    
 				<c:forEach begin="${pager.startNum}" end="${pager.lastNum}" var="i">
-			    	<li class="page-item"><a class="page-link" href="./list?page=${i}">${i}</a></li>
+			    	<li class="page-item"><a class="page-link" href="./list?page=${i}&search=${pager.search}&kind=${pager.kind}&sort=${pager.sort}">${i}</a></li>
 				</c:forEach>
 				
 				<c:if test="${pager.next}">
 			    <li class="page-item">
-			      <a class="page-link" href="./list?page=${pager.lastNum+1}" aria-label="Next">
+			      <a class="page-link" href="./list?page=${pager.lastNum+1}&search=${pager.search}&kind=${pager.kind}&sort=${pager.sort}" aria-label="Next">
 			        <span aria-hidden="true">&raquo;</span>
 			      </a>
 			    </li>
@@ -60,7 +89,7 @@
 			</nav>
 			<br>
 			<c:if test="${not empty member}">
-			<a class="btn btn-secondary" href="./add">글 등록하기</a>
+				<a class="btn btn-secondary" href="./add">글 등록하기</a>
 			</c:if>
 		</div>
 	</div>

@@ -18,7 +18,7 @@ public class BoardService {
 	
 	public List<BoardDTO> list(Pager pager) throws Exception {
 		pager.makeRow();
-		Long totalCount = boardDAO.getTotal();
+		Long totalCount = boardDAO.getTotal(pager);
 		pager.makeNum(totalCount);
 		return boardDAO.list(pager);
 	}
