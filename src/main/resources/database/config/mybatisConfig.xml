@@ -5,8 +5,9 @@
   
 <configuration>
 	<typeAliases>
+		<typeAlias type="java.lang.Long" alias="Long"/>
 		<typeAlias type="com.cares.p1.register.RegisterDTO" alias="RegisterDTO"/>
 		<typeAlias type="com.cares.p1.board.BoardDTO" alias="BoardDTO"/>
-	
+		<typeAlias type="com.cares.p1.util.Pager" alias="Pager"/>
 	</typeAliases>
 </configuration>

@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.cares.p1.register.RegisterDTO;
+import com.cares.p1.util.Pager;
 
 @Service
 public class BoardService {
@@ -15,8 +16,11 @@ public class BoardService {
 	@Autowired
 	private BoardDAO boardDAO;
 	
-	public List<BoardDTO> list() throws Exception {
-		return boardDAO.list();
+	public List<BoardDTO> list(Pager pager) throws Exception {
+		pager.makeRow();
+		Long totalCount = boardDAO.getTotal();
+		pager.makeNum(totalCount);
+		return boardDAO.list(pager);
 	}
 	
 	public BoardDTO detail(BoardDTO boardDTO) throws Exception {

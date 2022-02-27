@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.cares.p1.register.RegisterDTO;
+import com.cares.p1.util.Pager;
 
 @Controller
 @RequestMapping(value = "/board/**")
@@ -20,8 +21,9 @@ public class BoardController {
 	private BoardService boardService;
 
 	@RequestMapping(value = "list", method = RequestMethod.GET)
-	public void list(Model model) throws Exception {
-		List<BoardDTO> ar = boardService.list();		
+	public void list(Model model, Pager pager) throws Exception {
+		List<BoardDTO> ar = boardService.list(pager);
+		model.addAttribute("pager", pager);
 		model.addAttribute("list", ar);
 	}
 	

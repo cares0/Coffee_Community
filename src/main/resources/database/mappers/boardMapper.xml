@@ -5,8 +5,15 @@
 
 <mapper namespace="com.cares.p1.board.BoardDAO">
 	
-	<select id="list" resultType="BoardDTO">
-		SELECT * FROM BOARD
+	<select id="list" resultType="BoardDTO" parameterType="Pager">
+		SELECT * 
+		FROM (SELECT ROWNUM R, B.* 
+		      FROM (SELECT * FROM BOARD ORDER BY NUM DESC) B)
+		WHERE R BETWEEN #{startRow} AND #{lastRow}
+	</select>
+	
+	<select id="getTotal" resultType="Long">
+		SELECT COUNT(NUM) FROM BOARD
 	</select>
 	
 	<select id="detail" parameterType="BoardDTO" resultType="BoardDTO">
