@@ -16,5 +16,9 @@
 	<insert id="add" parameterType="BoardDTO">
 		INSERT INTO BOARD VALUES (BOARD_SEQ.NEXTVAL, #{title}, #{contents}, SYSDATE, #{writer}, 0, 2)
 	</insert>
+	
+	<delete id="delete" parameterType="BoardDTO">
+		DELETE BOARD WHERE NUM = #{num}
+	</delete>
 
 </mapper>

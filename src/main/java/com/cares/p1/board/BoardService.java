@@ -29,4 +29,8 @@ public class BoardService {
 		
 		return boardDAO.add(boardDTO);
 	}
+	
+	public int delete(BoardDTO boardDTO) throws Exception {
+		return boardDAO.delete(boardDTO);
+	}
 }

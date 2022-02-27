@@ -10,6 +10,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.cares.p1.register.RegisterDTO;
+
 @Controller
 @RequestMapping(value = "/board/**")
 public class BoardController {
@@ -42,5 +44,20 @@ public class BoardController {
 		return "redirect:./list";
 	}
 	
-	
+	@RequestMapping(value = "delete", method = RequestMethod.GET)
+	public String delete(BoardDTO boardDTO, HttpSession session) throws Exception {
+		
+		RegisterDTO registerDTO = (RegisterDTO) session.getAttribute("member");
+		if (registerDTO == null || !registerDTO.getNickname().equals(boardDTO.getWriter())) {			
+			System.out.println(registerDTO);
+			System.out.println(boardDTO.getWriter());
+			System.out.println(registerDTO.getNickname());
+			System.out.println(!registerDTO.getNickname().equals(boardDTO.getWriter()));			
+			System.out.println("삭제실패");
+			return "redirect:./list";
+		}
+				
+		int result = boardService.delete(boardDTO);
+		return "redirect:./list";
+	}	
 }
