@@ -49,15 +49,28 @@ public class BoardController {
 		
 		RegisterDTO registerDTO = (RegisterDTO) session.getAttribute("member");
 		if (registerDTO == null || !registerDTO.getNickname().equals(boardDTO.getWriter())) {			
-			System.out.println(registerDTO);
-			System.out.println(boardDTO.getWriter());
-			System.out.println(registerDTO.getNickname());
-			System.out.println(!registerDTO.getNickname().equals(boardDTO.getWriter()));			
-			System.out.println("삭제실패");
 			return "redirect:./list";
 		}
 				
 		int result = boardService.delete(boardDTO);
 		return "redirect:./list";
-	}	
+	}
+	
+	@RequestMapping(value = "update", method = RequestMethod.GET)
+	public String update(BoardDTO boardDTO, Model model, HttpSession session) throws Exception {
+		RegisterDTO registerDTO = (RegisterDTO) session.getAttribute("member");
+		if (registerDTO == null || !registerDTO.getNickname().equals(boardDTO.getWriter())) {			
+			return "redirect:./list";
+		}
+		boardDTO = boardService.detail(boardDTO);
+		model.addAttribute("dto", boardDTO);
+		return "board/update";
+	}
+	
+	@RequestMapping(value = "update", method = RequestMethod.POST)
+	public String update(BoardDTO boardDTO) throws Exception {
+		int result = boardService.update(boardDTO);
+		
+		return "redirect:./detail?num="+boardDTO.getNum();
+	}
 }

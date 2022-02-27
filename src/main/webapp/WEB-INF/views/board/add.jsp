@@ -23,7 +23,7 @@
 			</div>
 			<br>
 			<div class="form-floating">
-			  <textarea class="form-control" placeholder="Leave a comment here" id="contents" name="contents" style="height: 300px"></textarea>
+			  <textarea class="form-control" placeholder="contents" id="contents" name="contents" style="height: 300px"></textarea>
 			  <label for="contents">Contents</label>
 			</div>
 			<br>

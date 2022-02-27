@@ -15,9 +15,10 @@
 </head>
 <body>
 	<c:import url="../template/header.jsp"></c:import>
-	
+	<br>
 	<div class="container">
 		<h1 class="text-center">Board Detail Page</h1>
+		<br>
 		<ul class="list-group">
 		  <li class="list-group-item d-flex justify-content-between align-items-center">
 		    <div class="ms-2 me-auto">
@@ -56,7 +57,8 @@
 		<br>
 		<c:if test="${dto.writer==member.nickname}">
 			<div class="d-flex justify-content-between">		
-				<div><a class="btn btn-secondary text-center" href="./update">글 수정하기</a></div>
+				<div><a class="btn btn-secondary text-center" href="./update?num=${dto.num}&writer=${dto.writer}">글 수정하기</a></div>
+				<div><a class="btn btn-secondary text-center" href="./list?">글 목록보기</a></div>				
 				<div><a class="btn btn-secondary text-center" href="./delete?num=${dto.num}&writer=${dto.writer}">글 삭제하기</a></div>
 			</div>
 		</c:if>

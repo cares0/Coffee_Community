@@ -21,4 +21,8 @@
 		DELETE BOARD WHERE NUM = #{num}
 	</delete>
 
+	<update id="update" parameterType="BoardDTO">
+		UPDATE BOARD SET TITLE = #{title}, CONTENTS = #{contents} WHERE NUM = #{num}
+	</update>
+	
 </mapper>
