@@ -6,6 +6,10 @@
 }
 
 .main_header {
-	background-color: #e6efff;
-	height: 80px;
+	background-color: #deeaff;
+	margin-bottom: 80px;
+}
+
+.main_header a {
+	color: #acb8cc;
 }

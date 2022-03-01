@@ -2,21 +2,21 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
     
-	<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-secondary">
+	<nav class="main_header navbar navbar-expand-md fixed-top">
       <div class="container-fluid d-flex justify-content-between">        
         <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarCollapse">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/p1/board/list?category=1">공지사항</a>
+              <a class="nav-link" aria-current="page" href="/p1/board/list?category=1">공지사항</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/p1/board/list?category=2">자유게시판</a>
+              <a class="nav-link" aria-current="page" href="/p1/board/list?category=2">자유게시판</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/p1/board/list?category=3">질문게시판</a>
+              <a class="nav-link" aria-current="page" href="/p1/board/list?category=3">질문게시판</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/p1/board/list?category=4">센서리게시판</a>
+              <a class="nav-link" aria-current="page" href="/p1/board/list?category=4">센서리게시판</a>
             </li>
           </ul>
           <ul class="navbar-nav d-flex justify-content-end">
