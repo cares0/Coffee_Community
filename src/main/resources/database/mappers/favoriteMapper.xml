@@ -5,4 +5,34 @@
 
 <mapper namespace="com.cares.p1.favorite.FavoriteDAO">
 
+	<select id="searchNum" parameterType="RegisterDTO" resultType="RegisterDTO">
+		SELECT ID, FAVOR_NUM FROM REGISTER WHERE ID = #{id}
+	</select>
+	
+	<insert id="addFavorite" parameterType="RegisterDTO">
+		INSERT INTO FAVORITE
+		VALUES (#{favor_num}, CUPNOTE_SEQ.NEXTVAL, RPOINT_SEQ.NEXTVAL, FLAVOR_SEQ.NEXTVAL)
+	</insert>
+	
+	<select id="searchFavorNums" parameterType="RegisterDTO" resultType="FavoriteDTO">
+		SELECT * FROM FAVORITE WHERE FAVOR_NUM = 
+		(SELECT FAVOR_NUM FROM REGISTER WHERE ID =#{id})
+	</select>
+	
+	<insert id="addCupnote" parameterType="CupnoteDTO">
+		INSERT INTO CUPNOTE
+		VALUES (#{cn_num}, #{cn_name})
+	</insert>
+	
+	<insert id="addRPoint" parameterType="RPointDTO">
+		INSERT INTO RPOINT
+		VALUES (#{rt_num}, #{point})
+	</insert>
+	
+	<insert id="addFlavor" parameterType="FlavorDTO">
+		INSERT INTO FLAVOR
+		VALUES (#{fv_num}, #{fv_name})
+	</insert>
+	
+	
 </mapper>

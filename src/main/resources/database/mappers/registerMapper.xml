@@ -7,7 +7,7 @@
 	
 	<insert id="join" parameterType="RegisterDTO">
 		INSERT INTO REGISTER
-		VALUES (#{id}, #{pw}, #{name}, #{nickname}, #{gender}, #{phone}, #{email}, #{adress}, 1)
+		VALUES (#{id}, #{pw}, #{name}, #{nickname}, #{gender}, #{phone}, #{email}, #{adress}, 1, FAVORITE_SEQ.NEXTVAL)
 	</insert>
 	
 	<select id="login" parameterType="RegisterDTO" resultType="RegisterDTO">
