@@ -26,4 +26,16 @@ public class FavoriteController {
 		
 		return "redirect:../";
 	}
+	
+	@RequestMapping(value = "update", method = RequestMethod.GET)
+	public void update(FavoriteDTO favoriteDTO, Model model) throws Exception {
+		model.addAttribute("favoriteDTO", favoriteDTO);
+	}
+	
+	@RequestMapping(value = "update", method = RequestMethod.POST)
+	public String update(FavoriteDTO favoriteDTO) throws Exception {
+		int result = favoriteService.update(favoriteDTO);
+		
+		return "redirect: ../register/mypage";
+	}
 }

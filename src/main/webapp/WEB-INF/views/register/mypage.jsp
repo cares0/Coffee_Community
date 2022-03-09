@@ -111,7 +111,10 @@
 			</div>
 		</div>
 		<br>
-		<a class="btn btn-secondary" href="./update?id=${registerDTO.id}">정보수정하기</a>
+		<div class="d-flex justify-content-between">
+			<a class="btn btn-secondary" href="./update?id=${registerDTO.id}">정보수정하기</a>
+			<a class="btn btn-secondary" href="../favorite/update?favoriteNum=${favoriteDTO.favoriteNum}">관심원두 수정하기</a>			
+		</div>
 		<br>
 	</div>
 </body>

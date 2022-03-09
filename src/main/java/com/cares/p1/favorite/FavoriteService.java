@@ -17,6 +17,10 @@ public class FavoriteService {
 		return favoriteDAO.add(favoriteDTO);
 	}
 	
+	public int update(FavoriteDTO favoriteDTO) throws Exception {
+		return favoriteDAO.update(favoriteDTO);
+	}
+	
 	
 	
 }

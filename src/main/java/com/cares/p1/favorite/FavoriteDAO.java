@@ -21,4 +21,8 @@ public class FavoriteDAO {
 	public RegisterDTO searchFavoriteNum(RegisterDTO registerDTO) throws Exception {
 		return sqlSession.selectOne(NAMESPACE+"searchFavoriteNum", registerDTO);
 	}
+	
+	public int update(FavoriteDTO favoriteDTO) throws Exception {
+		return sqlSession.update(NAMESPACE+"update", favoriteDTO);
+	}
 }

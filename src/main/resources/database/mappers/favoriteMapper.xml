@@ -13,4 +13,9 @@
 		SELECT FAVORITENUM FROM REGISTER WHERE ID = #{id}
 	</select>
 
+	<update id="update" parameterType="FavoriteDTO">
+		UPDATE FAVORITE SET CUPNOTE1 = #{cupnote1}, RPOINT = #{rPoint}, FLAVOR = #{flavor}
+		WHERE FAVORITENUM = #{favoriteNum}
+	</update>
+
 </mapper>
