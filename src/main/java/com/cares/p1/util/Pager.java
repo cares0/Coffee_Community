@@ -66,6 +66,10 @@ public class Pager {
 		if(curBlock == totalBlock) {
 			this.lastNum = totalPage;
 		}
+		
+		if(totalCount == 0) {
+			this.lastNum = 0L;
+		}
 	}
 	
 	private String kind;
