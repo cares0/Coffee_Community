@@ -4,6 +4,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.cares.p1.favorite.FavoriteDTO;
+
 @Repository
 public class RegisterDAO {
 
@@ -22,6 +24,10 @@ public class RegisterDAO {
 	
 	public RegisterDTO mypage(RegisterDTO registerDTO) throws Exception {
 		return sqlSession.selectOne(NAMESPACE+"mypage", registerDTO);
+	}
+	
+	public FavoriteDTO favoritePage(RegisterDTO registerDTO) throws Exception {
+		return sqlSession.selectOne(NAMESPACE+"favoritePage", registerDTO);
 	}
 	
 }

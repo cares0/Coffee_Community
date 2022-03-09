@@ -15,7 +15,17 @@
 	</select>
 
 	<select id="mypage" parameterType="RegisterDTO" resultType="RegisterDTO">
-		SELECT ID, NAME, NICKNAME, GENDER, PHONE, EMAIL, ADRESS FROM REGISTER WHERE ID = #{id}
+		SELECT ID, NAME, NICKNAME, GENDER, PHONE, EMAIL, ADRESS, FAVORITENUM
+		FROM REGISTER
+		WHERE ID = #{id}
 	</select>
+	
+	<select id="favoritePage" parameterType="RegisterDTO" resultType="FavoriteDTO">
+		SELECT * FROM FAVORITE WHERE FAVORITENUM = #{favoriteNum}
+	</select>
+	
+	<!-- resultType에 어떻게 담을거임? 하나밖에 못담는데? -->
+	
+	
 	
 </mapper>

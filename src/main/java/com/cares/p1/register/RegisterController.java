@@ -11,6 +11,8 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.cares.p1.favorite.FavoriteDTO;
+
 @Controller
 @RequestMapping(value = "/register/**")
 public class RegisterController {
@@ -57,7 +59,9 @@ public class RegisterController {
 		
 		RegisterDTO registerDTO = (RegisterDTO) session.getAttribute("member");
 		registerDTO = registerService.mypage(registerDTO);
-		model.addAttribute("dto", registerDTO);
+		FavoriteDTO favoriteDTO = registerService.favoritePage(registerDTO);
+		model.addAttribute("favoriteDTO", favoriteDTO);
+		model.addAttribute("registerDTO", registerDTO);
 	}
 	
 	@RequestMapping(value = "logout", method = RequestMethod.GET)
