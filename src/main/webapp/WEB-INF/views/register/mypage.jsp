@@ -82,13 +82,29 @@
 					  <li class="list-group-item d-flex justify-content-between align-items-center">
 					    <div class="ms-2 me-auto">
 					      <div class="fw-bold">로스팅포인트</div>
-					      ${favoriteDTO.rPoint}
+					      <c:if test="${favoriteDTO.rPoint==1}">
+					      	Light Roasting
+					      </c:if>
+					      <c:if test="${favoriteDTO.rPoint==2}">
+					      	Medium Roasting
+					      </c:if>
+					      <c:if test="${favoriteDTO.rPoint==3}">
+					      	Dark Roasting
+					      </c:if>
 					    </div>
 					  </li>
 					  <li class="list-group-item d-flex justify-content-between align-items-center">
 					    <div class="ms-2 me-auto">
-					      <div class="fw-bold">컵노트</div>
-					      ${favoriteDTO.flavor}
+					      <div class="fw-bold">향미</div>
+					      <c:if test="${favoriteDTO.flavor==1}">
+					      	산미 위주의 상큼한 커피
+					      </c:if>
+					      <c:if test="${favoriteDTO.flavor==2}">
+					      	고소하면서 부드러운 커피
+					      </c:if>
+					      <c:if test="${favoriteDTO.flavor==3}">
+					      	묵직하면서 단맛이 잘 느껴지는 커피
+					      </c:if>
 					    </div>
 					  </li>
 				</ul>
