@@ -70,4 +70,19 @@ public class RegisterController {
 		return "redirect:../";
 	}
 	
+	@RequestMapping(value = "update", method = RequestMethod.GET)
+	public void update(RegisterDTO registerDTO, Model model) throws Exception {
+		registerDTO = registerService.mypage(registerDTO);
+		model.addAttribute("registerDTO", registerDTO);
+	}
+	
+	@RequestMapping(value = "update", method = RequestMethod.POST)
+	public String update(RegisterDTO registerDTO) throws Exception {
+		int result = registerService.update(registerDTO);
+		
+		return "redirect:./mypage";
+	}
+	
+	
+	
 }

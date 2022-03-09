@@ -94,6 +94,9 @@
 				</ul>
 			</div>
 		</div>
+		<br>
+		<a class="btn btn-secondary" href="./update?id=${registerDTO.id}">정보수정하기</a>
+		<br>
 	</div>
 </body>
 </html>

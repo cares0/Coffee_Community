@@ -26,4 +26,8 @@ public class RegisterService {
 	public FavoriteDTO favoritePage(RegisterDTO registerDTO) throws Exception {
 		return registerDAO.favoritePage(registerDTO);
 	}
+	
+	public int update(RegisterDTO registerDTO) throws Exception {
+		return registerDAO.update(registerDTO);
+	}
 }

@@ -23,9 +23,12 @@
 	<select id="favoritePage" parameterType="RegisterDTO" resultType="FavoriteDTO">
 		SELECT * FROM FAVORITE WHERE FAVORITENUM = #{favoriteNum}
 	</select>
-	
 	<!-- resultType에 어떻게 담을거임? 하나밖에 못담는데? -->
 	
+	<update id="update" parameterType="RegisterDTO">
+		UPDATE REGISTER SET NAME = #{name}, PHONE = #{phone}, EMAIL = #{email}, ADRESS = #{adress} 
+		WHERE ID = #{id}
+	</update>
 	
 	
 </mapper>

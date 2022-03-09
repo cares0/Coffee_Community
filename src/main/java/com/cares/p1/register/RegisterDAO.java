@@ -30,4 +30,8 @@ public class RegisterDAO {
 		return sqlSession.selectOne(NAMESPACE+"favoritePage", registerDTO);
 	}
 	
+	public int update(RegisterDTO registerDTO) throws Exception {
+		return sqlSession.update(NAMESPACE+"update", registerDTO);
+	}
+	
 }
