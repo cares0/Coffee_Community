@@ -10,6 +10,7 @@ public class RegisterDTO {
 	private String email;
 	private String adress;
 	private Integer admin;
+	private Long favoriteNum;
 	
 	public String getId() {
 		return id;
@@ -65,5 +66,12 @@ public class RegisterDTO {
 	public void setAdmin(Integer admin) {
 		this.admin = admin;
 	}
+	public Long getFavoriteNum() {
+		return favoriteNum;
+	}
+	public void setFavoriteNum(Long favoriteNum) {
+		this.favoriteNum = favoriteNum;
+	}
+	
 	
 }

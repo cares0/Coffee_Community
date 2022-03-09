@@ -25,7 +25,7 @@ public class RegisterController {
 	@RequestMapping(value = "join", method = RequestMethod.POST)
 	public String join(RegisterDTO registerDTO, Model model) throws Exception {
 		int result = registerService.join(registerDTO);		
-		return "redirect:../favorite/add"; // 이거 틀림, 확인할것!
+		return "redirect:../favorite/add?id="+registerDTO.getId(); // 이거 틀림, 확인할것!
 	}
 	
 	@RequestMapping(value = "login", method = RequestMethod.GET)

@@ -23,4 +23,5 @@ public class RegisterDAO {
 	public RegisterDTO mypage(RegisterDTO registerDTO) throws Exception {
 		return sqlSession.selectOne(NAMESPACE+"mypage", registerDTO);
 	}
+	
 }

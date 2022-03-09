@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cares.p1.favorite.FavoriteDAO">
+	
+	<insert id="add" parameterType="FavoriteDTO">
+		INSERT INTO FAVORITE VALUES (#{favoriteNum}, #{cupnote1}, '', '', #{rPoint}, #{flavor})
+	</insert>
+
+	<select id="searchFavoriteNum" parameterType="RegisterDTO" resultType="RegisterDTO">
+		SELECT FAVORITENUM FROM REGISTER WHERE ID = #{id}
+	</select>
+
+</mapper>
